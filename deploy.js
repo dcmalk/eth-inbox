@@ -4,10 +4,7 @@ const { interface, bytecode } = require('./compile');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const provider = new HDWalletProvider(
-  process.env.NEMONIC_PHRASE,
-  'https://rinkeby.infura.io/v3/950b57b8049f47b798e9ef9a8ad1f0e2'
-);
+const provider = new HDWalletProvider(process.env.NEMONIC_PHRASE, process.env.NETWORK_URL);
 const web3 = new Web3(provider);
 
 const deploy = async () => {
